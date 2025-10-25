@@ -1,0 +1,15 @@
+{
+	"name": "devpod-test",
+	"image": "mcr.microsoft.com/devcontainers/base:noble",
+	"mounts": [
+		"type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,readonly"
+	],
+	"forwardPorts": [
+		8080
+	],
+	"remoteUser": "vscode",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"runArgs": [
+		"--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z"
+	]
+}
